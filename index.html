@@ -3,46 +3,95 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Effect calc system</title>
-    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <title>Mixing System</title>
+    <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="css/style.css">
 </head>
-<body>
-    <div class="container">
+<body class="bg-gray-900 text-white">
+    <div id="loading-overlay" class="loading-overlay hidden">
+        <div class="text-center">
+            <div class="loading-spinner"></div>
+            <div class="loading-text">Mixing ingredients...</div>
+        </div>
+    </div>
 
-    </div>
-    <div class="bg-white dark:bg-gray-800 rounded-lg px-6 py-8 ring shadow-xl ring-gray-900/5">
-        <div>
-          <span class="inline-flex items-center justify-center rounded-md bg-indigo-500 p-2 shadow-lg">
-            <i class="fa-solid fa-flask"></i>
-          </span>
+    <div class="container mx-auto p-6">
+        <h1 class="text-3xl font-bold text-center mb-8">Schedule I Mixing System</h1>
+        
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            <!-- Mixables Card -->
+            <div class="bg-gray-800 p-6 rounded-lg shadow-lg">
+                <div class="flex items-center space-x-3">
+                    <span class="bg-indigo-500 p-2 rounded-md shadow-lg">
+                        <i class="fa-solid fa-leaf text-white"></i>
+                    </span>
+                    <h3 class="text-lg font-semibold">Mixables</h3>
+                </div>
+                <p class="mt-4 text-gray-400">Select from various base substances.</p>
+                
+                <div class="dropdown-container mt-4">
+                    <div class="item-container" id="mixables-container">
+                        <i class="fa-solid fa-plus text-gray-400 text-2xl"></i>
+                    </div>
+                    <div class="dropdown" id="mixables-dropdown">
+                        <!-- Mixables will be populated by JavaScript -->
+                    </div>
+                </div>
+
+                <div id="mixable-effects" class="mt-4 hidden">
+                    <h4 class="font-medium mb-2">Base Effects:</h4>
+                    <div class="effect-list" id="mixable-effects-list">
+                        <!-- Effects will be populated by JavaScript -->
+                    </div>
+                </div>
+            </div>
+
+            <!-- Ingredients Card -->
+            <div class="bg-gray-800 p-6 rounded-lg shadow-lg">
+                <div class="flex items-center space-x-3">
+                    <span class="bg-indigo-500 p-2 rounded-md shadow-lg">
+                        <i class="fa-solid fa-flask text-white"></i>
+                    </span>
+                    <h3 class="text-lg font-semibold">Ingredients</h3>
+                </div>
+                <p class="mt-4 text-gray-400">Choose additional ingredients.</p>
+                
+                <div class="dropdown-container mt-4">
+                    <div class="item-container" id="ingredients-container">
+                        <i class="fa-solid fa-plus text-gray-400 text-2xl"></i>
+                    </div>
+                    <div class="dropdown" id="ingredients-dropdown">
+                        <!-- Ingredients will be populated by JavaScript -->
+                    </div>
+                </div>
+
+                <div class="ingredients-list" id="selected-ingredients">
+                    <!-- Selected ingredients will appear here -->
+                </div>
+            </div>
+
+            <!-- Outcome Card -->
+            <div class="bg-gray-800 p-6 rounded-lg shadow-lg">
+                <div class="flex items-center space-x-3">
+                    <span class="bg-indigo-500 p-2 rounded-md shadow-lg">
+                        <i class="fa-solid fa-flask-vial text-white"></i>
+                    </span>
+                    <h3 class="text-lg font-semibold">Outcome</h3>
+                </div>
+                <p class="mt-4 text-gray-400">Your final mix will have combined effects.</p>
+                <div class="mt-4 bg-gray-700 p-3 rounded text-white" id="outcome-display">Select mixables and ingredients</div>
+                
+                <div id="combined-effects" class="mt-4 hidden">
+                    <h4 class="font-medium mb-2">Combined Effects:</h4>
+                    <div class="effect-list" id="combined-effects-list">
+                        <!-- Combined effects will be populated by JavaScript -->
+                    </div>
+                </div>
+            </div>
         </div>
-        <h3 class="text-gray-900 dark:text-white mt-5 text-base font-medium tracking-tight ">Ingrediants</h3>
-        <p class="text-gray-500 dark:text-gray-400 mt-2 text-sm ">
-          Schedule I has multiple ingrediants that can be used to create custom mixes.
-          </br>
-          These mixes would have special effects on the person that uses the stuff you create.
-          </br>
-          Custom mixes also would have a higher price than the original product.
-          </br>
-          I personally do not know how it is calculated but i will throw in a estimate price.
-        </p>
     </div>
-    <div class="bg-white dark:bg-gray-800 rounded-lg px-6 py-8 ring shadow-xl ring-gray-900/5">
-        <div>
-          <span class="inline-flex items-center justify-center rounded-md bg-indigo-500 p-2 shadow-lg">
-            <i class="fa-solid fa-leaf"></i>
-          </span>
-        </div>
-        <h3 class="text-gray-900 dark:text-white mt-5 text-base font-medium tracking-tight ">Mixables</h3>
-        <p class="text-gray-500 dark:text-gray-400 mt-2 text-sm ">
-          Schedule I has multiple mixables for example OG Kush and other weed strains also meth and coke. 
-          </br>
-          These origal products can be mixed in the mixing station.
-          </br>
-          With ingrediants that would give the item special effects and make the value higher than the orignal.
-        </p>
-    </div>
-    
+
+    <script src="js/main.js"></script>
 </body>
 </html>
