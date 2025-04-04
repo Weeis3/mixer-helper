@@ -22,7 +22,6 @@ mixables: {
     },
     "Cocaine": {
         img: "mixables/cocaine.png",
-        effects: ["Energy", "Confidence", "Euphoria", "Anxiety", "Addiction Risk"]
     }
 },
 ingredients: {
