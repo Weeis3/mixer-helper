@@ -77,6 +77,8 @@ Edit
   }
 }
 ```
+---
+
 ## 💡 Simple card-based layout using TailwindCSS for responsiveness and clarity.
 
 Mixables and Ingredients are selected from dropdowns.
@@ -84,6 +86,8 @@ Mixables and Ingredients are selected from dropdowns.
 Effects dynamically update.
 
 Price is recalculated in real-time.
+
+---
 
 ## 🛠️ Dev Notes
 DOM is dynamically populated on DOMContentLoaded.
@@ -94,9 +98,7 @@ A maximum of 8 effects is enforced per mixture.
 
 Ingredient replacements apply in click order.
 
-##🚫 Disclaimer
-##⚠️ Price calculation might not be as accurate with higher ingrediant values
-##⚠️ This system includes fictional or controversial ingredients/effects purely for humorous or creative purposes. Not intended to promote or normalize the use of real illegal substances.
+---
 
 ##📂 File Structure
 ```pgsql
@@ -114,19 +116,31 @@ Edit
 │   └── *.png
 └── README.md
 ```
-##🧠 Possible Extensions
-Save custom mixtures
 
+---
+
+##🧠 Coming soon
 Export/sharing feature
+Rarity tiers for effects
+Better visuals when mixing
 
-Add rarity tiers or boost items
+---
 
-Add "failure" outcomes or visual transformations
+##🚫 Disclaimer
+⚠️ Price calculation might not be as accurate with higher ingrediant values
+⚠️ This system includes fictional or controversial ingredients/effects purely for humorous or creative purposes. Not intended to promote or normalize the use of real illegal substances.
+
+---
 
 ##🧙‍♂️ Author
 Weeis3
 Feel free to remix, fork, or contribute to the chaos.
 
+---
+
 ##📝 License
 This project is released under the MIT License.
+
+---
+
 ##Happy Mixing! 🍹✨
