@@ -100,7 +100,7 @@ Ingredient replacements apply in click order.
 
 ---
 
-##📂 File Structure
+## 📂 File Structure
 ```pgsql
 Copy
 Edit
