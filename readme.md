@@ -119,28 +119,27 @@ Edit
 
 ---
 
-##🧠 Coming soon
+## 🧠 Coming soon
 Export/sharing feature
 Rarity tiers for effects
 Better visuals when mixing
 
 ---
 
-##🚫 Disclaimer
-⚠️ Price calculation might not be as accurate with higher ingrediant values
-⚠️ This system includes fictional or controversial ingredients/effects purely for humorous or creative purposes. Not intended to promote or normalize the use of real illegal substances.
+## 🚫 Disclaimer
+## ⚠️ Price calculation might not be as accurate with higher ingrediant values
+## ⚠️ This system includes fictional or controversial ingredients/effects purely for humorous or creative purposes. Not intended to promote or normalize the use of real illegal substances.
 
 ---
 
-##🧙‍♂️ Author
-Weeis3
+## 🧙‍♂️ Author: Weeis3
 Feel free to remix, fork, or contribute to the chaos.
 
 ---
 
-##📝 License
+## 📝 License
 This project is released under the MIT License.
 
 ---
 
-##Happy Mixing! 🍹✨
+## Happy Mixing! 🍹✨
