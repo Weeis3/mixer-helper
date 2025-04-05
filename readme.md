@@ -1,13 +1,13 @@
 # 🧪 Schedule I Mixing System
 
-An interactive and slightly chaotic **mixing simulator** that lets you combine various base substances (*Mixables*) with quirky **Ingredients** to create wild and unpredictable effects. Perfect for experiments, laughs, or a unique game mechanic.
+An interactive and slightly chaotic **mixing simulator** that lets you combine various base substances (*Mixables*) with **Ingredients** to create wild and unpredictable effects.
 
 ---
 
 ## 🚀 Features
 
 - 🌿 Choose from iconic *Mixables* like **OG Kush**, **Green Crack**, or even... **Meth** (👀).
-- 🍌 Add hilarious ingredients such as **Banana**, **Donut**, **Horse Semen**, and more.
+- 🍌 Add ingredients such as **Banana**, **Donut**, **Horse Semen**, and more.
 - 🧬 Automatically apply *Effect Replacements* to transform your base effects.
 - 💰 Price is dynamically calculated based on the resulting effects.
 - 🎨 Slick interface with TailwindCSS + FontAwesome.
