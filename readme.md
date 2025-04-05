@@ -64,10 +64,9 @@ Some effects are harmless and fun (`Energizing`, `Spicy`), while others are... *
   basePrice: 35,
   effects: ["Calming"]
 }
-Ingredient
-js
-Copy
-Edit
+```
+### Ingredient
+```js
 "Banana": {
   img: "ingrediants/banana.png",
   effects: ["Gingeritis"],
