@@ -120,7 +120,9 @@ Edit
 
 ## 🧠 Coming soon
 Export/sharing feature
+
 Rarity tiers for effects
+
 Better visuals when mixing
 
 ---
