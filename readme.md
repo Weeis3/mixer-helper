@@ -1,6 +1,6 @@
 # 🧪 Schedule I Mixing System
 
-An interactive and slightly chaotic **mixing simulator** that lets you combine various base substances (*Mixables*) with **Ingredients** to create wild and unpredictable effects.
+Combine various base substances (*Mixables*) with **Ingredients** to create wild and unpredictable effects.
 
 ---
 
