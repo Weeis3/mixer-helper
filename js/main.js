@@ -1,30 +1,75 @@
 // Effect data for mixables and ingredients
-const effectData = {
-mixables: {
+const mixables =  {
     "OG Kush": {
         img: "mixables/og-kush.png",
+        basePrice: 35,
         effects: ["Calming"]
     },
     "Sour Diesel": {
         img: "mixables/sour-diesel.png",
+        basePrice: 35,
         effects: ["Refreshing"]
     },
     "Green Crack": {
         img: "mixables/green-crack.png",
+        basePrice: 35,
         effects: ["Thought-Provoking"]
     },
     "Grandaddy Purple": {
         img: "mixables/grandaddy-purple.png",
+        basePrice: 35,
         effects: ["Sedating"]
     },
     "Meth": {
         img: "mixables/meth.png",
+        basePrice: 70,
+        effects: []
     },
     "Cocaine": {
         img: "mixables/cocaine.png",
+        effects: []
     }
-},
-ingredients: {
+};
+
+const effectValues = {
+    "Anti-Gravity": 0.54,
+    "Athletic": 0.32,
+    "Balding": 0.30,
+    "Bright-Eyed": 0.40,
+    "Calming": 0.10,
+    "Calorie-Dense": 0.28,
+    "Cyclopean": 0.56,
+    "Disorienting": 0.00,
+    "Electrifying": 0.50,
+    "Energizing": 0.22,
+    "Euphoric": 0.18,
+    "Explosive": 0.00,
+    "Focused": 0.16,
+    "Foggy": 0.36,
+    "Gingeritis": 0.20,
+    "Glowing": 0.48,
+    "Jennerising": 0.42,
+    "Lethal": 0.00,
+    "Long Faced": 0.52,
+    "Munchies": 0.12,
+    "Paranoia": 0.00,
+    "Refreshing": 0.14,
+    "Schizophrenia": 0.00,
+    "Sedating": 0.26,
+    "Shrinking": 0.60,
+    "Seizure-Inducing": 0.00,
+    "Slippery": 0.34,
+    "Sneaky": 0.24,
+    "Spicy": 0.38,
+    "Sticky": 0.00,
+    "Thought-Provoking": 0.44,
+    "Toxic": 0.00,
+    "Tropic Thunder": 0.46,
+    "Zombifying": 0.58,
+};
+
+
+const ingredients = {
     "Banana": {
         img: "ingrediants/banana.png",
         effects: ["Gingeritis"],
@@ -57,7 +102,6 @@ ingredients: {
         replacements: {
             "Toxic": "Euphoric",
             "Slippery": "Munchies",
-            "Sneaky": "Paranoia",
             "Foggy": "Cyclopean",
             "Gingeritis": "Thought-Provoking",
             "Munchies": "Athletic",
@@ -81,8 +125,8 @@ ingredients: {
         img: "ingrediants/flu-medicine.png",
         effects: ["Sedating"],
         replacements: {
-            "Calming": "Bright-Eyed",
             "Athletic": "Munchies",
+            "Calming": "Bright-Eyed",
             "Thought-Provoking": "Gingeritis",
             "Cyclopean": "Foggy",
             "Munchies": "Slippery",
@@ -90,7 +134,7 @@ ingredients: {
             "Euphoric": "Toxic",
             "Focused": "Calming",
             "Electrifying": "Refreshing",
-            "Shrinking": "Paranoia"
+            "Shrinking": "Paranoia",
         }
     },
     "Gasoline": {
@@ -99,6 +143,7 @@ ingredients: {
         replacements: {
             "Gingeritis": "Smelly",
             "Jennerising": "Sneaky",
+            "Sneaky": "Tropic Thunder",
             "Munchies": "Sedating",
             "Energizing": "Spicy",
             "Euphoric": "Energizing",
@@ -131,15 +176,15 @@ ingredients: {
             "Focused": "Jennerising"
         }
     },
-    "Motor oil": {
+    "Motor Oil": {
         img: "ingrediants/oil.png",
         effects: ["Slippery"],
         replacements: {
             "Energizing": "Munchies",
-            "Foggy": "Toxic",
             "Euphoric": "Sedating",
-            "Paranoia": "Anti-Gravity",
-            "Munchies": "Schizophrenia"
+            "Foggy": "Toxic",
+            "Munchies": "Schizophrenia",
+            "Paranoia": "Anti-Gravity"
         }
     },
     "Paracetamol": {
@@ -160,13 +205,15 @@ ingredients: {
     },
     "Energy Drink": {
         img: "ingrediants/redbull.png",
-        effects: ["Athletic"], 
+        effects: ["Athletic"],
         replacements: {
             "Sedating": "Munchies",
             "Euphoric": "Energizing",
             "Spicy": "Euphoric",
             "Tropic Thunder": "Sneaky",
             "Glowing": "Disorienting",
+            "Foggy": "Laxative",
+            "Disorienting": "Electrifying",
             "Schizophrenia": "Balding",
             "Focused": "Shrinking"
         }
@@ -174,10 +221,27 @@ ingredients: {
     "Horse Semen": {
         img: "ingrediants/semen.png",
         effects: ["Long Faced"],
-        replacements:  {
+        replacements: {
             "Anti-Gravity": "Calming",
             "Gingeritis": "Refreshing",
             "Thought-Provoking": "Electrifying"
+        }
+    },
+    "Bean": {
+        img: "ingrediants/bean.png",
+        effects: ["Foggy"],
+        replacements: {
+            "Energizing": "Cyclopean",
+            "Calming": "Glowing",
+            "Sneaky": "Calming",
+            "Jennerising": "Paranoia",
+            "Athletic": "Laxative",
+            "Slippery": "Toxic",
+            "Thought-Provoking": "Energizing",
+            "Seizure-Inducing": "Focused",
+            "Focused": "Disorienting",
+            "Thought-Provoking": "Cyclopean",
+            "Shrinking": "Electrifying"
         }
     },
     "Viagra": {
@@ -190,9 +254,7 @@ ingredients: {
             "Disorienting": "Toxic"
         }
     }
-}
 };
-
 document.addEventListener('DOMContentLoaded', function() {
 // Store selected items
 const selectedItems = {
@@ -202,7 +264,7 @@ const selectedItems = {
 
 // Track which ingredients have had their replacements applied
 const appliedReplacements = new Set();
-
+var effects = []
 // Get DOM elements
 const loadingOverlay = document.getElementById('loading-overlay');
 const mixablesContainer = document.getElementById('mixables-container');
@@ -212,7 +274,7 @@ const ingredientsDropdown = document.getElementById('ingredients-dropdown');
 const selectedIngredientsDiv = document.getElementById('selected-ingredients');
 
 // Populate mixables dropdown
-Object.entries(effectData.mixables).forEach(([name, data]) => {
+Object.entries(mixables).forEach(([name, data]) => {
     const item = document.createElement('div');
     item.className = 'dropdown-item flex items-center';
     item.setAttribute('data-name', name);
@@ -224,7 +286,7 @@ Object.entries(effectData.mixables).forEach(([name, data]) => {
 });
 
 // Populate ingredients dropdown
-Object.entries(effectData.ingredients).forEach(([name, data]) => {
+Object.entries(ingredients).forEach(([name, data]) => {
     const item = document.createElement('div');
     item.className = 'dropdown-item flex items-center';
     item.setAttribute('data-name', name);
@@ -251,17 +313,25 @@ function clearIngredients() {
     updateIngredientsList();
     updateOutcome();
 }
+function calculatePrice(selectedMixable, effects, basePrice) {
 
+    // Calculate multiplier (excluding mixable's base effects)
+    const multiplier = effects.reduce((sum, effect) => {
+        return sum + (effectValues[effect] || 0);
+    }, 0);
+
+    return Math.round(basePrice * (1 + multiplier));
+}
 // Function to update the outcome display
 function updateOutcome() {
     const outcomeDisplay = document.getElementById('outcome-display');
     const combinedEffectsDiv = document.getElementById('combined-effects');
-    
+    const PriceText = document.getElementById("price");
     if (selectedItems.mixable) {
         let outcomeText = `Base: ${selectedItems.mixable.name}`;
-        
+       
         if (selectedItems.ingredients.length > 0) {
-            const totalIngredients = selectedItems.ingredients.reduce((sum, ing) => sum + ing.count, 0);
+            const totalIngredients = selectedItems.ingredients.length;
             outcomeText += ` + ${totalIngredients} ingredient`;
             if (totalIngredients > 1) outcomeText += 's';
         }
@@ -269,60 +339,88 @@ function updateOutcome() {
         outcomeDisplay.textContent = outcomeText;
         combinedEffectsDiv.classList.remove('hidden');
         calculateCombinedEffects();
+        var price = `$${calculatePrice(selectedItems.mixable.name, effects, mixables[selectedItems.mixable.name].basePrice)}`;
+        PriceText.textContent = price;
     } else {
         outcomeDisplay.textContent = 'Select mixables and ingredients';
         combinedEffectsDiv.classList.add('hidden');
     }
 }
 
-// Function to apply effect replacements
-function applyReplacements(effects, ingredientName) {
-    const ingredient = effectData.ingredients[ingredientName];
-    if (!ingredient.replacements) return effects;
-    
-    return effects.map(effect => {
-        return ingredient.replacements[effect] || effect;
+
+function applyReplacements(ingredientName, currentEffects) {
+    const ingredient = ingredients[ingredientName];
+    if (!ingredient) return [...currentEffects]; // Return copy of original effects if invalid ingredient
+
+    // Create a new array to avoid mutating the original
+    let updatedEffects = [...currentEffects];
+
+    // Process each replacement rule
+    for (const [originalEffect, newEffect] of Object.entries(ingredient.replacements)) {
+        const effectIndex = updatedEffects.indexOf(originalEffect);
+        
+        if (effectIndex !== -1) { // If the effect exists in current effects
+            // Replace it only if new effect isn't already present
+            if (!updatedEffects.includes(newEffect)) {
+                updatedEffects[effectIndex] = newEffect;
+            } else {
+                // Remove the original if new effect already exists
+                updatedEffects.splice(effectIndex, 1);
+            }
+        }
+    }
+
+    // Add the ingredient's base effects if not already present
+    ingredient.effects.forEach(effect => {
+        if (!updatedEffects.includes(effect)) {
+            updatedEffects.push(effect);
+        }
     });
+
+    return updatedEffects.slice(0, 8); // Enforce max 8 effects
 }
 
-// Function to calculate and display combined effects
 function calculateCombinedEffects() {
     if (!selectedItems.mixable) return;
     
     const effectsList = document.getElementById('combined-effects-list');
     effectsList.innerHTML = '';
-    
-    // Get base effects
-    let allEffects = [...effectData.mixables[selectedItems.mixable.name].effects];
-    
-    // Process each ingredient
-    selectedItems.ingredients.forEach(ing => {
-        // Add the ingredient's own effects
-        allEffects = [...allEffects, ...effectData.ingredients[ing.name].effects];
-        
-        // Apply replacements only if we have enough of this ingredient
-        if (effectData.ingredients[ing.name].replacements) {
-            // For Donut, we need at least 2 to get Explosive
-            if (ing.name === "Donut" && ing.count >= 2) {
-                allEffects = applyReplacements(allEffects, ing.name);
-            }
-            // For other ingredients, apply replacements as before
-            else if (ing.name !== "Donut") {
-                allEffects = applyReplacements(allEffects, ing.name);
-            }
+
+    // Start with base effects
+    let currentEffects = [...mixables[selectedItems.mixable.name].effects] || [];
+
+    // Process each ingredient in exact click order
+    selectedItems.ingredients.forEach(ingredient => {
+        const ingredientName = ingredient.name;
+        currentEffects = applyReplacements(ingredientName, currentEffects);
+    });
+
+    // Get unique effects while preserving order
+    effects = [];
+    const seen = new Set();
+    currentEffects.forEach(effect => {
+        if (!seen.has(effect)) {
+            seen.add(effect);
+            effects.push(effect);
         }
     });
-    
-    // Get unique effects
-    const uniqueEffects = [...new Set(allEffects)];
-    
-    // Display each effect
-    uniqueEffects.forEach(effectName => {
+
+    // Display effects
+    effects.forEach(effectName => {
         const effectDiv = document.createElement('div');
         effectDiv.className = 'effect-item';
         effectDiv.textContent = effectName;
         effectsList.appendChild(effectDiv);
     });
+
+    // Update price display
+    const PriceText = document.getElementById("price");
+    const price = `$${calculatePrice(
+        selectedItems.mixable.name, 
+        effects, 
+        mixables[selectedItems.mixable.name].basePrice
+    )}`;
+    PriceText.textContent = price;
 }
 // Function to show mixable effects
 function showMixableEffects(mixableName) {
@@ -335,7 +433,7 @@ function showMixableEffects(mixableName) {
     }
     
     effectsList.innerHTML = '';
-    const effects = effectData.mixables[mixableName].effects;
+    const effects = mixables[mixableName].effects;
     
     effects.forEach(effect => {
         const effectDiv = document.createElement('div');
@@ -359,7 +457,7 @@ mixablesContainer.addEventListener('click', function(e) {
 mixablesDropdown.querySelectorAll('.dropdown-item').forEach(item => {
     item.addEventListener('click', function() {
         const name = item.getAttribute('data-name');
-        const data = effectData.mixables[name];
+        const data = mixables[name];
         
         // Update the container with selected item
         mixablesContainer.innerHTML = `
@@ -388,35 +486,23 @@ ingredientsContainer.addEventListener('click', function(e) {
     });
     ingredientsDropdown.style.display = ingredientsDropdown.style.display === 'block' ? 'none' : 'block';
 });
-
+// Modify the ingredient selection handler
 ingredientsDropdown.querySelectorAll('.dropdown-item').forEach(item => {
     item.addEventListener('click', async function() {
         const name = item.getAttribute('data-name');
-        const data = effectData.ingredients[name];
+        const data = ingredients[name];
         
         // Show loading overlay
         showLoading();
         
-        // Random delay between 2-5 seconds
-        const delay = Math.random() * 3000 + 2000;
+        // Random delay
+        await new Promise(resolve => setTimeout(resolve, Math.random() * 1000));
         
-        // Wait for the delay
-        await new Promise(resolve => setTimeout(resolve, delay));
-        
-        // Check if ingredient already exists in selection
-        const existingIng = selectedItems.ingredients.find(ing => ing.name === name);
-        
-        if (existingIng) {
-            // Increment count if already exists
-            existingIng.count++;
-        } else {
-            // Add new ingredient with count 1
-            selectedItems.ingredients.push({ 
-                img: data.img, 
-                name: name,
-                count: 1
-            });
-        }
+        // Add new ingredient instance (no counting)
+        selectedItems.ingredients.push({ 
+            img: data.img, 
+            name: name
+        });
         
         updateIngredientsList();
         updateOutcome();
@@ -429,46 +515,29 @@ ingredientsDropdown.querySelectorAll('.dropdown-item').forEach(item => {
     });
 });
 
-// Function to update the selected ingredients list
+// Simplify updateIngredientsList
 function updateIngredientsList() {
     selectedIngredientsDiv.innerHTML = '';
     
+    // Display each ingredient in order
     selectedItems.ingredients.forEach((ing, index) => {
         const ingDiv = document.createElement('div');
-        ingDiv.className = 'ingredient-item';
+        ingDiv.className = 'ingredient-item flex items-center justify-between p-2 bg-gray-700 rounded mb-2';
         ingDiv.innerHTML = `
-            <img src="${ing.img}" alt="${ing.name}" class="w-6 h-6">
-            <span>${ing.name}</span>
-            <span class="ingredient-count">${ing.count}</span>
-            <div class="flex gap-1">
-                <button class="remove-one" data-index="${index}">
-                    <i class="fas fa-minus"></i>
-                </button>
-                <button class="remove-all" data-index="${index}">
-                    <i class="fas fa-times"></i>
-                </button>
+            <div class="flex items-center">
+                <img src="${ing.img}" alt="${ing.name}" class="w-6 h-6 mr-2">
+                <span>${ing.name}</span>
             </div>
+            <button class="remove-single p-1 text-red-400 hover:text-red-300" 
+                    data-index="${index}">
+                <i class="fas fa-times"></i>
+            </button>
         `;
         selectedIngredientsDiv.appendChild(ingDiv);
     });
-    
+
     // Add event listeners to remove buttons
-    document.querySelectorAll('.remove-one').forEach(button => {
-        button.addEventListener('click', function(e) {
-            e.stopPropagation();
-            const index = parseInt(button.getAttribute('data-index'));
-            selectedItems.ingredients[index].count--;
-            
-            if (selectedItems.ingredients[index].count <= 0) {
-                selectedItems.ingredients.splice(index, 1);
-            }
-            
-            updateIngredientsList();
-            updateOutcome();
-        });
-    });
-    
-    document.querySelectorAll('.remove-all').forEach(button => {
+    document.querySelectorAll('.remove-single').forEach(button => {
         button.addEventListener('click', function(e) {
             e.stopPropagation();
             const index = parseInt(button.getAttribute('data-index'));
@@ -478,7 +547,6 @@ function updateIngredientsList() {
         });
     });
 }
-
 // Close dropdowns when clicking anywhere else
 document.addEventListener('click', function() {
     document.querySelectorAll('.dropdown').forEach(dropdown => {
