@@ -335,8 +335,8 @@ function clearIngredients() {
     updateIngredientsList();
     updateOutcome();
 }
-  // Function to calculate sell price
-  function calculatePrice() {
+// Function to calculate sell price
+function calculatePrice() {
     if (!selectedItems.mixable) return 0;
     const basePrice = mixables[selectedItems.mixable.name].basePrice;
     let allEffects = [...mixables[selectedItems.mixable.name].effects];
@@ -347,15 +347,15 @@ function clearIngredients() {
         allEffects = applyReplacements(allEffects, ing.name);
       }
     });
-  
+    
     const uniqueEffects = [...new Set(allEffects)];
     const effectsPriceSum = uniqueEffects.reduce((sum, effect) => {
       return sum + (effectValues[effect] || 0);
     }, 0);
     const sellPrice = Math.round(basePrice * (1 + effectsPriceSum));
     
-    price.textContent = `$${sellPrice}`;
-  }
+    return sellPrice;
+}
 // Function to update the outcome display
 function updateOutcome() {
     const outcomeDisplay = document.getElementById('outcome-display');
