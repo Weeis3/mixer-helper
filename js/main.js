@@ -340,14 +340,14 @@ function clearIngredients() {
     if (!selectedItems.mixable) return 0;
   
     // 1. Get base price of the mixable
-    const basePrice = effectData.mixables[selectedItems.mixable.name].basePrice;
+    const basePrice = mixables[selectedItems.mixable.name].basePrice;
   
     // 2. Get all active effects (after replacements)
-    let allEffects = [...effectData.mixables[selectedItems.mixable.name].effects];
+    let allEffects = [...mixables[selectedItems.mixable.name].effects];
     
     selectedItems.ingredients.forEach(ing => {
-      allEffects = [...allEffects, ...effectData.ingredients[ing.name].effects];
-      if (effectData.ingredients[ing.name].replacements) {
+      allEffects = [...allEffects, ...ingredients[ing.name].effects];
+      if (ingredients[ing.name].replacements) {
         allEffects = applyReplacements(allEffects, ing.name);
       }
     });
@@ -355,7 +355,7 @@ function clearIngredients() {
     // 3. Sum the prices of all UNIQUE effects
     const uniqueEffects = [...new Set(allEffects)];
     const effectsPriceSum = uniqueEffects.reduce((sum, effect) => {
-      return sum + (effectData.effectPrices[effect] || 0);
+      return sum + (effectPrices[effect] || 0);
     }, 0);
   
     // 4. Apply formula: round(basePrice * (1 + effectsPriceSum))
