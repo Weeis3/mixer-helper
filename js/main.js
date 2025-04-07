@@ -70,7 +70,7 @@ const effectValues = {
 
 
 const ingredients = {
-    "Banana": {
+        "Banana": {
         img: "ingrediants/banana.png",
         effects: ["Gingeritis"],
         replacements: {
@@ -82,6 +82,47 @@ const ingredients = {
             "Disorienting": "Focused",
             "Paranoia": "Jennerising",
             "Smelly": "Anti-Gravity"
+        }
+    },
+    "Bean": {
+        img: "ingrediants/bean.png",
+        effects: ["Foggy"],
+        replacements: {
+            "Energizing": "Cyclopean",
+            "Calming": "Glowing",
+            "Sneaky": "Calming",
+            "Jennerising": "Paranoia",
+            "Athletic": "Laxative",
+            "Slippery": "Toxic",
+            "Thought-Provoking": "Energizing",
+            "Seizure-Inducing": "Focused",
+            "Focused": "Disorienting",
+            "Thought-Provoking": "Cyclopean",
+            "Shrinking": "Electrifying"
+        }
+    },
+    "Addy": {
+        img: "ingrediants/addy.png",
+        effects: ["Thought-Provoking"],
+        replacements: {
+            "Sedating": "Gingeritis",
+            "Long Faced": "Electrifying",
+            "Glowing": "Refreshing",
+            "Foggy": "Energizing",
+            "Explosive": "Euphoric"
+        }
+    },
+    "battery": {
+        img: "ingrediants/battery.png",
+        effects: ["Thought-Provoking"],
+        replacements: {
+            "Munchies": "Tropic Thunder",
+            "Euphoric": "Zombifying",
+            "Electrifying": "Euphoric",
+            "Laxative": "Calorie-Dense",
+            "Electrifying": "Euphoric",
+            "Cyclopean": "Glowing",
+            "Shrinking": "Munchies"
         }
     },
     "Chili": {
@@ -102,6 +143,7 @@ const ingredients = {
         replacements: {
             "Toxic": "Euphoric",
             "Slippery": "Munchies",
+            "Sneaky": "Paranoia",
             "Foggy": "Cyclopean",
             "Gingeritis": "Thought-Provoking",
             "Munchies": "Athletic",
@@ -125,8 +167,8 @@ const ingredients = {
         img: "ingrediants/flu-medicine.png",
         effects: ["Sedating"],
         replacements: {
-            "Athletic": "Munchies",
             "Calming": "Bright-Eyed",
+            "Athletic": "Munchies",
             "Thought-Provoking": "Gingeritis",
             "Cyclopean": "Foggy",
             "Munchies": "Slippery",
@@ -134,7 +176,7 @@ const ingredients = {
             "Euphoric": "Toxic",
             "Focused": "Calming",
             "Electrifying": "Refreshing",
-            "Shrinking": "Paranoia",
+            "Shrinking": "Paranoia"
         }
     },
     "Gasoline": {
@@ -143,7 +185,6 @@ const ingredients = {
         replacements: {
             "Gingeritis": "Smelly",
             "Jennerising": "Sneaky",
-            "Sneaky": "Tropic Thunder",
             "Munchies": "Sedating",
             "Energizing": "Spicy",
             "Euphoric": "Energizing",
@@ -176,15 +217,15 @@ const ingredients = {
             "Focused": "Jennerising"
         }
     },
-    "Motor Oil": {
+    "Motor oil": {
         img: "ingrediants/oil.png",
         effects: ["Slippery"],
         replacements: {
             "Energizing": "Munchies",
-            "Euphoric": "Sedating",
             "Foggy": "Toxic",
-            "Munchies": "Schizophrenia",
-            "Paranoia": "Anti-Gravity"
+            "Euphoric": "Sedating",
+            "Paranoia": "Anti-Gravity",
+            "Munchies": "Schizophrenia"
         }
     },
     "Paracetamol": {
@@ -205,15 +246,13 @@ const ingredients = {
     },
     "Energy Drink": {
         img: "ingrediants/redbull.png",
-        effects: ["Athletic"],
+        effects: ["Athletic"], 
         replacements: {
             "Sedating": "Munchies",
             "Euphoric": "Energizing",
             "Spicy": "Euphoric",
             "Tropic Thunder": "Sneaky",
             "Glowing": "Disorienting",
-            "Foggy": "Laxative",
-            "Disorienting": "Electrifying",
             "Schizophrenia": "Balding",
             "Focused": "Shrinking"
         }
@@ -221,27 +260,10 @@ const ingredients = {
     "Horse Semen": {
         img: "ingrediants/semen.png",
         effects: ["Long Faced"],
-        replacements: {
+        replacements:  {
             "Anti-Gravity": "Calming",
             "Gingeritis": "Refreshing",
             "Thought-Provoking": "Electrifying"
-        }
-    },
-    "Bean": {
-        img: "ingrediants/bean.png",
-        effects: ["Foggy"],
-        replacements: {
-            "Energizing": "Cyclopean",
-            "Calming": "Glowing",
-            "Sneaky": "Calming",
-            "Jennerising": "Paranoia",
-            "Athletic": "Laxative",
-            "Slippery": "Toxic",
-            "Thought-Provoking": "Energizing",
-            "Seizure-Inducing": "Focused",
-            "Focused": "Disorienting",
-            "Thought-Provoking": "Cyclopean",
-            "Shrinking": "Electrifying"
         }
     },
     "Viagra": {
