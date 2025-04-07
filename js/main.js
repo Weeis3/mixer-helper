@@ -1,4 +1,4 @@
-// Effect data for mixables and ingredients
+// Effect data for mixables, effectValues and ingredients
 const mixables =  {
     "OG Kush": {
         img: "mixables/og-kush.png",
@@ -338,11 +338,7 @@ function clearIngredients() {
   // Function to calculate sell price
   function calculatePrice() {
     if (!selectedItems.mixable) return 0;
-  
-    // 1. Get base price of the mixable
     const basePrice = mixables[selectedItems.mixable.name].basePrice;
-  
-    // 2. Get all active effects (after replacements)
     let allEffects = [...mixables[selectedItems.mixable.name].effects];
     
     selectedItems.ingredients.forEach(ing => {
@@ -352,13 +348,10 @@ function clearIngredients() {
       }
     });
   
-    // 3. Sum the prices of all UNIQUE effects
     const uniqueEffects = [...new Set(allEffects)];
     const effectsPriceSum = uniqueEffects.reduce((sum, effect) => {
       return sum + (effectPrices[effect] || 0);
     }, 0);
-  
-    // 4. Apply formula: round(basePrice * (1 + effectsPriceSum))
     const sellPrice = Math.round(basePrice * (1 + effectsPriceSum));
     
     price.textContent = `$${sellPrice}`;
@@ -380,7 +373,7 @@ function updateOutcome() {
         outcomeDisplay.textContent = outcomeText;
         combinedEffectsDiv.classList.remove('hidden');
         calculateCombinedEffects();
-        var price = `$${calculatePrice(selectedItems.mixable.name, effects, mixables[selectedItems.mixable.name].basePrice)}`;
+        var price = `$${calculatePrice()}`;
         PriceText.textContent = price;
     } else {
         outcomeDisplay.textContent = 'Select mixables and ingredients';
