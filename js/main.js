@@ -13,7 +13,7 @@ const mixables =  {
     "Green Crack": {
         img: "mixables/green-crack.png",
         basePrice: 35,
-        effects: ["Thought-Provoking"]
+        effects: ["Energizing"]
     },
     "Grandaddy Purple": {
         img: "mixables/grandaddy-purple.png",
@@ -343,17 +343,16 @@ function calculatePrice() {
     
     selectedItems.ingredients.forEach(ing => {
       allEffects = [...allEffects, ...ingredients[ing.name].effects];
+      console.log(allEffects)
       if (ingredients[ing.name].replacements) {
-        allEffects = applyReplacements(allEffects, ing.name);
+        allEffects = applyReplacements(ing.name, allEffects);
       }
     });
-    
     const uniqueEffects = [...new Set(allEffects)];
     const effectsPriceSum = uniqueEffects.reduce((sum, effect) => {
       return sum + (effectValues[effect] || 0);
     }, 0);
     const sellPrice = Math.round(basePrice * (1 + effectsPriceSum));
-    
     return sellPrice;
 }
 // Function to update the outcome display
@@ -410,7 +409,7 @@ function applyReplacements(ingredientName, currentEffects) {
             updatedEffects.push(effect);
         }
     });
-
+    console.log("Updatedeffects: " + updatedEffects)
     return updatedEffects.slice(0, 8); // Enforce max 8 effects
 }
 
@@ -422,7 +421,6 @@ function calculateCombinedEffects() {
 
     // Start with base effects
     let currentEffects = [...mixables[selectedItems.mixable.name].effects] || [];
-
     // Process each ingredient in exact click order
     selectedItems.ingredients.forEach(ingredient => {
         const ingredientName = ingredient.name;
