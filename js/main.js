@@ -449,11 +449,7 @@ function calculateCombinedEffects() {
 
     // Update price display
     const PriceText = document.getElementById("price");
-    const price = `$${calculatePrice(
-        selectedItems.mixable.name, 
-        effects, 
-        mixables[selectedItems.mixable.name].basePrice
-    )}`;
+    const price = `$${calculatePrice()}`;
     PriceText.textContent = price;
 }
 // Function to show mixable effects
