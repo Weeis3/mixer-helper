@@ -350,7 +350,7 @@ function clearIngredients() {
   
     const uniqueEffects = [...new Set(allEffects)];
     const effectsPriceSum = uniqueEffects.reduce((sum, effect) => {
-      return sum + (effectPrices[effect] || 0);
+      return sum + (effectValues[effect] || 0);
     }, 0);
     const sellPrice = Math.round(basePrice * (1 + effectsPriceSum));
     
